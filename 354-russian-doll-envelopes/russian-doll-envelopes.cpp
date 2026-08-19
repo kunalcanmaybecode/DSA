@@ -16,8 +16,9 @@ public:
         for (int i = 0; i < n; i++) {
             if (temp.empty() || envelopes[i][1] > temp.back()) temp.push_back(envelopes[i][1]);
             else{
-                auto it = lower_bound(temp.begin(), temp.end(), envelopes[i][1]);
-                *it = envelopes[i][1];
+                auto it = lower_bound(temp.begin(), temp.end(), envelopes[i][1]) - temp.begin();
+                // *it = envelopes[i][1];
+                temp[it] = envelopes[i][1];
             }
         }
         return temp.size();
