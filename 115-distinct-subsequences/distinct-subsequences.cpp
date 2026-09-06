@@ -1,7 +1,6 @@
 class Solution {
 private:
-    int helper(int i, int j, string &s, string &t,
-        vector<vector<int>> &dp) {
+    int helper(int i, int j, string &s, string &t, vector<vector<int>> &dp) {
         if (j == t.size()) return 1;    
         if (i == s.size()) return 0;        
         if (dp[i][j] != -1) return dp[i][j];
