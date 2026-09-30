@@ -9,7 +9,7 @@ public:
                 bal++;
                 ans[i] = bal % 2; 
             }
-            else if(seq[i] == ')'){
+            else{
                 ans[i] = bal % 2;
                 bal--;
             }
