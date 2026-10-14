@@ -1,26 +1,21 @@
 class Solution {
 public:
     string maxSumOfSquares(int num, int sum) {
-        int high = 9;
-        string ans;
         if(sum > num*9) return "";
-        while(num > 0){
-            if(sum > high){
-                num--;
-                sum -= high;
-                ans+= to_string(high);
-            }
-            else{
-                while(sum < high && high > 0){
-                    high--;
-                }
-                num--;
-                ans+= to_string(high);
-                sum = 0;
-                high = 0;
+        int x = sum/9;
+        int r = sum%9;
+        string ans;
+        for(int i = 0; i < x; i++){
+            ans += to_string(9);
+        }
+        if(r != 0){
+            ans += to_string(r);
+        }
+        if(ans.size() < num){
+            while(num - ans.size() > 0){
+                ans+='0';
             }
         }
-        
         return ans;
     }
 };
